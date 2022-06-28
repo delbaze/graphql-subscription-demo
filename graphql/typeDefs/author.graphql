@@ -1,0 +1,27 @@
+type Query {
+  listAuthors: [Author]
+}
+
+type Mutation {
+  addAuthor(addAuthorInput: AddAuthor): Author
+  assignBook(assignBookInput: AssignBookInput) : Author
+}
+
+input AddAuthor {
+  name: String!
+  birthday: Date
+}
+
+type Author {
+  _id: ObjectID
+  name: String!
+  birthday: Date
+  books: [Book]
+  creele: DateTime
+  majle: DateTime
+}
+
+input AssignBookInput {
+  author_id: ObjectID
+  book_id: ObjectID
+}

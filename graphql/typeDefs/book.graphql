@@ -1,0 +1,18 @@
+type Query {
+  listBooks: [Book]
+}
+type Mutation {
+  addBook(addBookInput: AddBookInput): Book
+}
+type Subscription {
+  bookAdded: Book
+}
+type Book {
+  _id: ObjectID
+  name: String
+  authors: [Author]
+}
+
+input AddBookInput {
+  name: String!
+}
